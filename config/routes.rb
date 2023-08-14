@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  get 'puppeteer/click_button'
-  
+  get 'puppeteer/interact_with_chatlio'
+
 end
