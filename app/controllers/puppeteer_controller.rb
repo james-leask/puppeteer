@@ -1,5 +1,5 @@
-# require 'puppeteer'
-require 'puppeteer-ruby'
+require 'puppeteer'
+# require 'puppeteer-ruby'
 
 # class PuppeteerController < ApplicationController
 #   def interact_with_chatlio
@@ -44,39 +44,39 @@ require 'puppeteer-ruby'
 
 
 
-class PuppeteerController < ApplicationController
-  def type_message_in_text_field
-    browser = Puppeteer.launch(
-      headless: false
-    )
+# class PuppeteerController < ApplicationController
+#   def type_message_in_text_field
+#     browser = Puppeteer.launch(
+#       headless: false
+#     )
 
-    page = browser.pages.first || browser.new_page
+#     page = browser.pages.first || browser.new_page
     
-    await page.goto('https://fantasy.premierleague.com/')
+#     await page.goto('https://fantasy.premierleague.com/')
     
-    await page.wait_for_selector('#onetrust-accept-btn-handler');
-    await page.click('#onetrust-accept-btn-handler');
+#     await page.wait_for_selector('#onetrust-accept-btn-handler');
+#     await page.click('#onetrust-accept-btn-handler');
 
-    await page.click("#loginUsername");
-    page.type_text('#loginUsername', 'user@email.com' )
+#     await page.click("#loginUsername");
+#     page.type_text('#loginUsername', 'user@email.com' )
 
-    browser.close
+#     browser.close
 
-    render plain: 'Input received'
+#     render plain: 'Input received'
   
-  end
-end
+#   end
+# end
 
 
 ### Trying with Javascript and Puppeteer ###
-# class PuppeteerController < ApplicationController
-#   def run_script
-#     browser = Puppeteer.launch(
-#              headless: false
-#            )
-#     result = `node puppeteer_script.js`
-#     render plain: result
+class PuppeteerController < ApplicationController
+  def run_script
+    browser = Puppeteer.launch(
+             headless: false
+           )
+    result = `node #{Rails.root}/app/javascript/controllers/puppeteer_script.js`
+    render plain: result
 
-#   end
-# end
+  end
+end
 
