@@ -10,7 +10,8 @@ const puppeteer = require('puppeteer');
   await page.waitForSelector(buttonSelector);
   await page.click(buttonSelector);
   
-  console.log("FOUND")
   
   await browser.close();
+
 })();
+
