@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   # get 'puppeteer/interact_with_chatlio'
-  get 'puppeteer/type_message_in_text_field'
+  # get 'puppeteer/type_message_in_text_field'
 
   # JS route
   get 'puppeteer/run_script'
